@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Police • Fines Tablet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Force tablet hidden on page load */
+    #wrap { display: none !important; }
+    #wrap.show { display: grid !important; } /* show only when JS adds this */
+  </style>
+</head>
+<body>
+  <!-- Tablet wrapper starts hidden -->
+  <div id="wrap" class="hidden">
+    <div class="tablet">
+      <!-- Top bar -->
+      <div class="tabbar">
+        <div class="brand">POLICE • FINES TABLET</div>
+        <button id="closeBtn" class="ghost" aria-label="Close">✕</button>
+      </div>
+
+      <!-- Main content -->
+      <div class="content">
+        <!-- Left panel: Nearby Players -->
+        <div class="panel left">
+          <h2>Nearby Players</h2>
+          <div id="players"></div>
+          <label>Manual Server ID</label>
+          <input type="number" id="manualId" placeholder="e.g. 23">
+        </div>
+
+        <!-- Middle panel: Offence -->
+        <div class="panel middle">
+          <h2>Offence</h2>
+          <label>Category</label>
+          <select id="cat"></select>
+
+          <label>Offence</label>
+          <select id="off"></select>
+
+          <label>Fine ($)</label>
+          <input type="number" id="amount">
+
+          <label>Points</label>
+          <input type="number" id="points">
+
+          <label>Note (plate, location, etc.)</label>
+          <input type="text" id="note" placeholder="Optional">
+        </div>
+
+        <!-- Right panel: Payment -->
+        <div class="panel right">
+          <h2>Payment</h2>
+          <label>Method</label>
+          <select id="method">
+            <option value="bank">Bank (Pay Now)</option>
+            <option value="cash">Cash (Pay Now)</option>
+            <option value="unpaid">Unpaid (Ticket)</option>
+          </select>
+
+          <div class="summary">
+            <p>Target: <span id="summaryTarget">—</span></p>
+            <p>Offence: <span id="summaryOffence">—</span></p>
+            <p>Amount: <span id="summaryAmount">$0</span></p>
+            <p>Points: <span id="summaryPoints">0</span></p>
+          </div>
+
+          <button id="issueBtn" class="primary">Issue Fine</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
