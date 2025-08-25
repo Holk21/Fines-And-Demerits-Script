@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 name 'qb-fines-demerits'
-author 'ChatGPT'
+author 'Braiden Marshall'
 description 'QBCore Fines & Demerits with NZ-inspired fines, NPC payments, 24-month rolling demerits, engine block, okokNotify, and Tablet UI'
 version '1.3.0'
 
